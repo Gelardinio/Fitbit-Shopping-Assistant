@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.0"
+  },
+  "fitbit": {
+    "appUUID": "2be9fb9e-4d96-4ab4-ba8f-32ad45fd2919",
+    "appType": "app",
+    "appDisplayName": "Shopping Assistant",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#8bc34a",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "Shopping Assistant"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

@@ -1,0 +1,57 @@
+.background {
+  viewport-fill: black;
+}
+
+#demotext {
+  fill: white;
+  font-size: 32;
+  font-family: System-Regular;
+  font-weight: bold;
+  text-anchor: middle;
+  text-length: 99;
+}
+
+.application-fill           { fill: fb-orange; }
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
+
+#button-1 {
+  x: 20;
+  y: 20;
+  fill: #F18F01;
+}
+
+#button-1 #image {
+  href: "icon1.png"
+}
+
+#button-2 {
+  x: 180;
+  y: 20;
+  fill: #99C24D;
+}
+
+#button-2 #image {
+  href: "icon2.png"
+}
+
+#button-3 {
+  x: 20;
+  y: 180;
+  fill: #41BBD9;
+}
+
+#button-3 #image {
+  href: "icon3.png"
+}
+
+#button-4 {
+  x: 180;
+  y: 180;
+  fill: #ADCAD6;
+}
+
+#button-4 #image {
+  href: "icon4.png"
+}
+
