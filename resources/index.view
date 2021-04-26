@@ -1,7 +1,11 @@
-<svg class="background">
-  <text id="demotext" x="50%" y="50%+15">Hello World!</text>
-  <use id="button-1" href="#icon-button" class="extra-large-button application-fill plus-button" />
-  <use id="button-2" href="#icon-button" class="extra-large-button application-fill plus-button" />
-  <use id="button-3" href="#icon-button" class="extra-large-button application-fill plus-button" />
-  <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
+<svg>
+  <svg id="screen1">
+    <text id="demotext" x="50%" y="50%+15"></text>
+    <use id="button-1" href="#icon-button" class="extra-large-button application-fill plus-button" />
+    <use id="button-2" href="#icon-button" class="extra-large-button application-fill plus-button" />
+    <use id="button-3" href="#icon-button" class="extra-large-button application-fill plus-button" />
+  </svg>
+  <svg id="screen2" display="none">
+    <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
+  </svg>
 </svg>
