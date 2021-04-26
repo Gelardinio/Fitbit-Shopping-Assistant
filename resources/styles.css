@@ -55,3 +55,12 @@
   href: "icon4.png"
 }
 
+#button-5 {
+  x: 180;
+  y: 180;
+  fill: #ADCAD6;
+}
+
+#button-5 #image {
+  href: "icon4.png"
+}

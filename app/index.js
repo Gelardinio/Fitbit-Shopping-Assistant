@@ -10,6 +10,7 @@ let screen3 = document.getElementById("screen3");
 const button1 = document.getElementById("button-1");
 const button2 = document.getElementById("button-2");
 const button4 = document.getElementById("button-4");
+const button5 = document.getElementById("button-5");
 
 let demotext = document.getElementById("demotext");
 demotext.x = 168;
@@ -33,7 +34,7 @@ button1.addEventListener("click", (evt) => {
   showScreen2();
 })
 
-button4.addEventListener("click", (evt) => {
+button5.addEventListener("click", (evt) => {
   console.log("CLICKED 2");
   showScreen1();
 })
