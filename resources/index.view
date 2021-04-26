@@ -8,4 +8,7 @@
   <svg id="screen2" display="none">
     <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
   </svg>
+  <svg id="screen3" display="none">
+    <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
+  </svg>
 </svg>
