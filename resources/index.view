@@ -7,9 +7,10 @@
     <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
   </svg>
   <svg id="screen2" display="none">
-    <use id="button-5" href="#icon-button" class="extra-large-button application-fill plus-button" />
+    <use id="button-5" href="#text-button" class="text-button primary application-fill" />
+    <use id="button-6" href="#text-button" class="text-button primary application-fill" />
   </svg>
   <svg id="screen3" display="none">
-    <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
+    <use id="button-4" href="#icon-button" class="custom-button application-fill plus-button" />
   </svg>
 </svg>

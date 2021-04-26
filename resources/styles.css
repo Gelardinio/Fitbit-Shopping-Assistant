@@ -55,12 +55,29 @@
   href: "icon4.png"
 }
 
-#button-5 {
-  x: 180;
-  y: 180;
-  fill: #ADCAD6;
+.custom-button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
-#button-5 #image {
-  href: "icon4.png"
+
+#button-5 #text {
+  text-buffer: "BOI";
+}
+
+#button-5 {
+  y: 250;
+}
+
+#button-6 #text {
+  text-buffer: "BOI";
+}
+
+#button-6 {
+  y: 100;
 }
