@@ -6,6 +6,8 @@ import document from "document";
 let screen1 = document.getElementById("screen1");
 let screen2 = document.getElementById("screen2");
 let screen3 = document.getElementById("screen3");
+let list = document.getElementById("myList");
+let items = list.getElementsByClassName("list-item");
 
 const button1 = document.getElementById("button-1");
 const button2 = document.getElementById("button-2");
@@ -16,6 +18,13 @@ let demotext = document.getElementById("demotext");
 demotext.x = 168;
 demotext.y = 50;
 demotext.text = "";
+
+items.forEach((element, index) => {
+  let touch = element.getElementById("touch");
+  touch.addEventListener("click", (evt) => {
+    console.log(`touched: ${index}`);
+  });
+});
 
 function showScreen1() {
   console.log("Show screen 1");
