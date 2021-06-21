@@ -102,6 +102,10 @@
   text-length: 20;
 }
 
+.list-item image {
+  href: "icon2.png"
+}
+
 .line {
   width: 100%;
   height: 6;
