@@ -10,12 +10,15 @@
       <use href="#scrollview">
       <use href="#scrollview-item" height="200">
         <rect width="100%" height="100%" fill="fb-cyan"/>
-        <text x="40%">asdf</text>
+        <text x="25%" y="29%">Adidas</text>
         <svg viewport-fill="green">
-          <section x="50%-50" y="50%-50" width="100" height="100">
-            <image x="68" y="68" width="50" height="50" href="icon1.png" />
+          <section x="57%" y="9%" width="100" height="100">
+            <image width="50" height="50" href="adidas.png" />
           </section>
         </svg>
+        <text x="8%" y="50%" fill="green">Small</text>
+        <text x="8%" y="70%">Medium</text>
+        <text x="8%" y="90%">Large</text>
       </use>
       <use href="#scrollview-item" height="200">
         <rect width="100%" height="100%" fill="fb-red" />

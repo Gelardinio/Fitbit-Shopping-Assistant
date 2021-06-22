@@ -19,6 +19,32 @@ demotext.x = 168;
 demotext.y = 50;
 demotext.text = "";
 
+let UserSize = class {
+  constructor(shirtLength, chestLength, waistLength, hipLength) {
+    this.shirtLength = shirtLength;
+    this.chestLength = chestLength;
+    this.waistLength = waistLength;
+    this.hipLength = hipLength;
+  }
+}
+
+let ShirtSize = class {
+  constructor(length1, chest1, waist1, hip1, length2, chest2, waist2, hip2, length3, chest3, waist3, hip3) {
+    this.length1 = length1;
+    this.chest1 = chest1;
+    this.waist1 = waist1;
+    this.hip1 = hip1; 
+    this.length2 = length2;
+    this.chest2 = chest2;
+    this.waist2 = waist2;
+    this.hip2 = hip2;
+    this.length3 = length3;
+    this.chest3 = chest3;
+    this.waist3 = waist3;
+    this.hip3 = hip3;    
+  }
+}
+
 items.forEach((element, index) => {
   let touch = element.getElementById("touch");
   touch.addEventListener("click", (evt) => {
