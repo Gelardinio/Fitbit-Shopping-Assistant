@@ -19,7 +19,12 @@ demotext.x = 168;
 demotext.y = 50;
 demotext.text = "";
 
-let UserSize = class {
+let shirtLength = 0;
+let chestLength = 0;
+let waistLength = 0;
+let hipLength = 0;
+
+let User = class {
   constructor(shirtLength, chestLength, waistLength, hipLength) {
     this.shirtLength = shirtLength;
     this.chestLength = chestLength;
@@ -43,14 +48,16 @@ let ShirtSize = class {
     this.waist3 = waist3;
     this.hip3 = hip3;    
   }
+  bestSize {
+    
+  }
 }
 
-items.forEach((element, index) => {
-  let touch = element.getElementById("touch");
-  touch.addEventListener("click", (evt) => {
-    console.log(`touched: ${index}`);
-  });
-});
+let NewUser = new User(40, 40, 40, 40);
+shirtLength = NewUser.shirtLength;
+chestLength = NewUser.chestLength;
+waistLength = NewUser.waistLength;
+hipLength = NewUser.hipLength; 
 
 function showScreen1() {
   console.log("Show screen 1");
