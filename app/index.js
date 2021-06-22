@@ -8,6 +8,7 @@ let screen2 = document.getElementById("screen2");
 let screen3 = document.getElementById("screen3");
 let list = document.getElementById("myList");
 let items = list.getElementsByClassName("list-item");
+let adidas = document.getElementById("adidas");
 
 const button1 = document.getElementById("button-1");
 const button2 = document.getElementById("button-2");
@@ -48,9 +49,6 @@ let ShirtSize = class {
     this.waist3 = waist3;
     this.hip3 = hip3;    
   }
-  bestSize {
-    
-  }
 }
 
 let NewUser = new User(40, 40, 40, 40);
@@ -58,6 +56,8 @@ shirtLength = NewUser.shirtLength;
 chestLength = NewUser.chestLength;
 waistLength = NewUser.waistLength;
 hipLength = NewUser.hipLength; 
+
+turnGreen();
 
 function showScreen1() {
   console.log("Show screen 1");
@@ -80,3 +80,8 @@ button5.addEventListener("click", (evt) => {
   console.log("CLICKED 2");
   showScreen1();
 })
+
+function turnGreen() {
+  adidas.style.fill = "green";
+  console.log("turn green");
+}

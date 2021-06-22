@@ -16,55 +16,31 @@
             <image width="50" height="50" href="adidas.png" />
           </section>
         </svg>
-        <text x="8%" y="50%" fill="green">Small</text>
+        <text x="8%" y="50%"id="adidas">Small</text>
         <text x="8%" y="70%">Medium</text>
         <text x="8%" y="90%">Large</text>
       </use>
+
       <use href="#scrollview-item" height="200">
-        <rect width="100%" height="100%" fill="fb-red" />
+      <use href="#scrollview-item" height="200">
+        <rect width="100%" height="100%" fill="fb-red"/>
+        <text x="25%" y="29%">Nike</text>
+        <svg viewport-fill="green">
+          <section x="57%" y="9%" width="100" height="100">
+            <image width="50" height="50" href="adidas.png" />
+          </section>
+        </svg>
+        <text x="8%" y="50%"id="nike">Small</text>
+        <text x="8%" y="70%">Medium</text>
+        <text x="8%" y="90%">Large</text>
       </use>
+      </use>
+
       <use href="#scrollview-item" height="200">
         <rect width="100%" height="100%" fill="fb-green" />
       </use>
     </use>
     <use id="myList" href="#tile-list" class="horizontal-pad">
-      <!--
-      <use href="#my-header">
-        <set href="#text" attributeName="text-buffer" to="HEADER" />
-      </use>
-      
-      <use id="item1" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 1" />
-      </use>
-      <use id="item2" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 2" />
-      </use>
-      <use id="item3" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 3" />
-      </use>
-      <use id="item4" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 4" />
-      </use>
-      <use id="item5" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 5" />
-      </use>
-      <use id="item6" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 6" />
-      </use>
-      <use id="item7" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 7" />
-      </use>
-      <use id="item8" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 8" />
-      </use>
-      <use id="item9" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 9" />
-      </use>
-      <use id="item10" href="#my-item">
-        <set href="#text" attributeName="text-buffer" to="Text Item 10" />
-      </use>
-    </use>
-    -->
   </svg>
   <svg id="screen3" display="none">
     <use id="button-4" href="#icon-button" class="custom-button application-fill plus-button" />
