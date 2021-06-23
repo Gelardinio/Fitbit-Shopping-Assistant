@@ -26,7 +26,8 @@ let waistLength = 0;
 let hipLength = 0;
 
 let User = class {
-  constructor(shirtLength, chestLength, waistLength, hipLength) {
+  constructor(gender, shirtLength, chestLength, waistLength, hipLength) {
+    this.gender = gender;
     this.shirtLength = shirtLength;
     this.chestLength = chestLength;
     this.waistLength = waistLength;
@@ -35,27 +36,43 @@ let User = class {
 }
 
 let ShirtSize = class {
-  constructor(length1, chest1, waist1, hip1, length2, chest2, waist2, hip2, length3, chest3, waist3, hip3) {
-    this.length1 = length1;
+  constructor(chest1, waist1, hip1, chest2, waist2, hip2, chest3, waist3, hip3) {
     this.chest1 = chest1;
     this.waist1 = waist1;
     this.hip1 = hip1; 
-    this.length2 = length2;
     this.chest2 = chest2;
     this.waist2 = waist2;
     this.hip2 = hip2;
-    this.length3 = length3;
     this.chest3 = chest3;
     this.waist3 = waist3;
     this.hip3 = hip3;    
   }
 }
 
-let NewUser = new User(40, 40, 40, 40);
-shirtLength = NewUser.shirtLength;
-chestLength = NewUser.chestLength;
-waistLength = NewUser.waistLength;
-hipLength = NewUser.hipLength; 
+let PantSize = class {
+  constructor(waist1, hip1, inseam1, waist2, hip2, inseam2, waist3, hip3, inseam3) {
+      this.waist1 = waist1;
+      this.hip1 = hip1;
+      this.inseam1 = inseam1;
+      this.waist2 = waist2;
+      this.hip2 = hip2;
+      this.inseam2 = inseam2;
+      this.waist3 = waist3;
+      this.hip3 = hip3;
+      this.inseam3 = inseam3;      
+  }
+}
+
+let NewUser = new User("m", 40, 40, 40, 40);
+
+if (NewUser.gender == "m") {
+  let AdidasShirt = new ShirtSize(35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42);
+  let AdidasPant = new PantSize(31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5);
+  let NikeShirt = new ShirtSize(36.25, 31.5, 36.25, 39.25, 33.5, 39.25, 42.5, 36.5, 42.5);
+} else {
+  let AdidasShirt = new ShirtSize(34, 27.6, 37.5, 36.5, 30, 40, 39, 33, 42.5);
+  let AdidasPant = new PantSize(38.5, 38, 30.5, 31.75, 40.5, 31, 34.5, 43.5, 31.5);
+}
 
 turnGreen();
 
