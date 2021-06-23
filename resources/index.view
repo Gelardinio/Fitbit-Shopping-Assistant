@@ -16,9 +16,9 @@
             <image width="50" height="50" href="adidas.png" />
           </section>
         </svg>
-        <text x="4%" y="50%" id="adidas1">Small 35.5, 31, 36</text>
-        <text x="4%" y="70%" id = "adidas2">Medium 38.5, 33.5, 38.5</text>
-        <text x="4%" y="90%" id = "adidas3">Large 42, 37.5, 42</text>
+        <text x="4%" y="50%" text-length="25" id="adidas1"></text>
+        <text x="4%" y="70%" text-length="25" id="adidas2"></text>
+        <text x="4%" y="90%" text-length="25" id="adidas3"></text>
       </use>
 
       <use href="#scrollview-item" height="200">
@@ -27,12 +27,12 @@
         <text x="25%" y="29%">Nike</text>
         <svg viewport-fill="green">
           <section x="57%" y="9%" width="100" height="100">
-            <image width="50" height="50" href="adidas.png" />
+            <image width="50" height="50" href="nike.png" />
           </section>
         </svg>
-        <text x="8%" y="50%"id="nike">Small</text>
-        <text x="8%" y="70%">Medium</text>
-        <text x="8%" y="90%">Large</text>
+        <text x="4%" y="50%" id="nike1">Small 36, 31.5, 36</text>
+        <text x="4%" y="70%" id="nike2">Medium 39, 33.5, 39</text>
+        <text x="4%" y="90%" id="nike3">Large 42.5, 36.5, 42.5</text>
       </use>
       </use>
 

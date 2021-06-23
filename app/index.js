@@ -8,17 +8,16 @@ let screen2 = document.getElementById("screen2");
 let screen3 = document.getElementById("screen3");
 let list = document.getElementById("myList");
 let items = list.getElementsByClassName("list-item");
-let adidas = document.getElementById("adidas");
+let adidas1 = document.getElementById("adidas1");
+let adidas2 = document.getElementById("adidas2");
+let adidas3 = document.getElementById("adidas3");
+let incrementer = 1;
+let adidas = document.getElementById("adidas" + incrementer);
 
 const button1 = document.getElementById("button-1");
 const button2 = document.getElementById("button-2");
 const button4 = document.getElementById("button-4");
 const button5 = document.getElementById("button-5");
-
-let demotext = document.getElementById("demotext");
-demotext.x = 168;
-demotext.y = 50;
-demotext.text = "";
 
 let shirtLength = 0;
 let chestLength = 0;
@@ -26,14 +25,15 @@ let waistLength = 0;
 let hipLength = 0;
 
 let User = class {
-  constructor(gender, shirtLength, chestLength, waistLength, hipLength) {
+  constructor(gender, chestLength, waistLength, hipLength) {
     this.gender = gender;
-    this.shirtLength = shirtLength;
     this.chestLength = chestLength;
     this.waistLength = waistLength;
     this.hipLength = hipLength;
   }
 }
+
+let NewUser = new User("m", 40, 40, 40);
 
 let ShirtSize = class {
   constructor(chest1, waist1, hip1, chest2, waist2, hip2, chest3, waist3, hip3) {
@@ -46,6 +46,18 @@ let ShirtSize = class {
     this.chest3 = chest3;
     this.waist3 = waist3;
     this.hip3 = hip3;    
+  }
+  bestFit() {
+    let range1 = Math.abs(NewUser.chestLength - this.chest1) + Math.abs(newUser.waistLength - this.waist1) + Math.abs(NewUser.hipLength - this.hip1);
+    let range2 = Math.abs(NewUser.chestLength - this.chest2) + Math.abs(newUser.waistLength - this.waist2) + Math.abs(NewUser.hipLength - this.hip2);
+    let range3 = Math.abs(NewUser.chestLength - this.chest3) + Math.abs(newUser.waistLength - this.waist3) + Math.abs(NewUser.hipLength - this.hip3);
+    if (range1 < range2 && range1 < range3) {
+      return "adidas1";
+    } else if (range2 < range1 && range2 < range3) {
+      return "adidas2";
+    } else {
+      return "adidas3";
+    }
   }
 }
 
@@ -63,7 +75,7 @@ let PantSize = class {
   }
 }
 
-let NewUser = new User("m", 40, 40, 40, 40);
+
 
 if (NewUser.gender == "m") {
   let AdidasShirt = new ShirtSize(35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42);
@@ -75,6 +87,7 @@ if (NewUser.gender == "m") {
 }
 
 turnGreen();
+addText();
 
 function showScreen1() {
   console.log("Show screen 1");
@@ -99,6 +112,15 @@ button5.addEventListener("click", (evt) => {
 })
 
 function turnGreen() {
+  let adidas = document.getElementById(AdidasShirt.bestFit());
   adidas.style.fill = "green";
   console.log("turn green");
+  let added = "Value: ";
+  console.log(added + AdidasShirt.chest1);
+}
+
+function addText() {
+  adidas1.text = "Small " + AdidasShirt.chest1 + " " + AdidasShirt.waist1 + " " + AdidasShirt.hip1;
+  adidas2.text = "Medium " + AdidasShirt.chest2 + " " + AdidasShirt.waist2 + " " + AdidasShirt.hip2;
+  adidas3.text = "Large " + AdidasShirt.chest3 + " " + AdidasShirt.waist3 + " " + AdidasShirt.hip3;
 }
