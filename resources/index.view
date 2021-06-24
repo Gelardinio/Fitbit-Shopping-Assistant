@@ -8,11 +8,12 @@
   </svg>
   <svg id="screen2" display="none">
       <use href="#scrollview">
-      <use href="#scrollview-item" height="200">
+      <use href="#scrollview-item" height="250">
         <rect width="100%" height="100%" fill="fb-cyan"/>
-        <text x="25%" y="29%">Adidas</text>
+        <use id="button-5" href="#icon-button" class="medium-button application-fill plus-button" />
+        <text x="13%" y="29%">Adidas</text>
         <svg viewport-fill="green">
-          <section x="57%" y="9%" width="100" height="100">
+          <section x="45%" y="13%" width="100" height="100">
             <image width="50" height="50" href="adidas.png" />
           </section>
         </svg>
@@ -21,8 +22,7 @@
         <text x="4%" y="90%" text-length="25" id="adidas3"></text>
       </use>
 
-      <use href="#scrollview-item" height="200">
-      <use href="#scrollview-item" height="200">
+      <use href="#scrollview-item" height="250">
         <rect width="100%" height="100%" fill="fb-red"/>
         <text x="25%" y="29%">Nike</text>
         <svg viewport-fill="green">
@@ -33,7 +33,6 @@
         <text x="4%" y="50%" id="nike1">Small 36, 31.5, 36</text>
         <text x="4%" y="70%" id="nike2">Medium 39, 33.5, 39</text>
         <text x="4%" y="90%" id="nike3">Large 42.5, 36.5, 42.5</text>
-      </use>
       </use>
 
       <use href="#scrollview-item" height="200">

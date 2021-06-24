@@ -71,7 +71,9 @@
 }
 
 #button-5 {
-  y: 250;
+  y: 20;
+  x: 230;
+  fill: "black";
 }
 
 #button-6 #text {

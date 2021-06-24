@@ -33,7 +33,9 @@ let User = class {
   }
 }
 
-let NewUser = new User("m", 40, 40, 40);
+let NewUser = new User("f", 20, 20, 20);
+
+console.log(NewUser[2]);
 
 let ShirtSize = class {
   constructor(chest1, waist1, hip1, chest2, waist2, hip2, chest3, waist3, hip3) {
@@ -47,10 +49,10 @@ let ShirtSize = class {
     this.waist3 = waist3;
     this.hip3 = hip3;    
   }
-  bestFit() {
-    let range1 = Math.abs(NewUser.chestLength - this.chest1) + Math.abs(newUser.waistLength - this.waist1) + Math.abs(NewUser.hipLength - this.hip1);
-    let range2 = Math.abs(NewUser.chestLength - this.chest2) + Math.abs(newUser.waistLength - this.waist2) + Math.abs(NewUser.hipLength - this.hip2);
-    let range3 = Math.abs(NewUser.chestLength - this.chest3) + Math.abs(newUser.waistLength - this.waist3) + Math.abs(NewUser.hipLength - this.hip3);
+  bestFit(nUser) {
+    let range1 = Math.abs(nUser.chestLength - this.chest1) + Math.abs(nUser.waistLength - this.waist1) + Math.abs(nUser.hipLength - this.hip1);
+    let range2 = Math.abs(nUser.chestLength - this.chest2) + Math.abs(nUser.waistLength - this.waist2) + Math.abs(nUser.hipLength - this.hip2);
+    let range3 = Math.abs(nUser.chestLength - this.chest3) + Math.abs(nUser.waistLength - this.waist3) + Math.abs(nUser.hipLength - this.hip3);
     if (range1 < range2 && range1 < range3) {
       return "adidas1";
     } else if (range2 < range1 && range2 < range3) {
@@ -74,8 +76,6 @@ let PantSize = class {
       this.inseam3 = inseam3;      
   }
 }
-
-
 
 if (NewUser.gender == "m") {
   let AdidasShirt = new ShirtSize(35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42);
@@ -112,7 +112,7 @@ button5.addEventListener("click", (evt) => {
 })
 
 function turnGreen() {
-  let adidas = document.getElementById(AdidasShirt.bestFit());
+  let adidas = document.getElementById(AdidasShirt.bestFit(NewUser));
   adidas.style.fill = "green";
   console.log("turn green");
   let added = "Value: ";
