@@ -65,7 +65,6 @@
   cursor: pointer;
 }
 
-
 #button-5 #text {
   text-buffer: "BOI";
 }
@@ -74,6 +73,12 @@
   y: 20;
   x: 230;
   fill: "black";
+  z-index: "1";
+  position: absolute;
+}
+
+#button-5 #image {
+  href: "back.png"
 }
 
 #button-6 #text {

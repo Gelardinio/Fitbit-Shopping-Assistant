@@ -7,10 +7,10 @@
     <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
   </svg>
   <svg id="screen2" display="none">
+      <use id="button-5" href="#icon-button" class="medium-button application-fill plus-button" />
       <use href="#scrollview">
       <use href="#scrollview-item" height="250">
         <rect width="100%" height="100%" fill="fb-cyan"/>
-        <use id="button-5" href="#icon-button" class="medium-button application-fill plus-button" />
         <text x="13%" y="29%">Adidas</text>
         <svg viewport-fill="green">
           <section x="45%" y="13%" width="100" height="100">
@@ -35,15 +35,7 @@
         <text x="4%" y="90%" id="nike3">Large 42.5, 36.5, 42.5</text>
       </use>
 
-      <use href="#scrollview-item" height="200">
-        <rect width="100%" height="100%" fill="fb-green" />
-      </use>
     </use>
     <use id="myList" href="#tile-list" class="horizontal-pad">
-  </svg>
-  <svg id="screen3" display="none">
-    <use id="button-4" href="#icon-button" class="custom-button application-fill plus-button" />
-    <use id="button-5" href="#text-button" class="text-button primary application-fill" />
-    <use id="button-6" href="#text-button" class="text-button primary application-fill" />
   </svg>
 </svg>

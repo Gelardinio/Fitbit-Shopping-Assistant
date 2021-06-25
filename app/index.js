@@ -91,8 +91,8 @@ addText();
 
 function showScreen1() {
   console.log("Show screen 1");
-  screen1.style.display = "inline"; 
   screen2.style.display = "none";
+  screen1.style.display = "inline"; 
 }
 
 function showScreen2() {
