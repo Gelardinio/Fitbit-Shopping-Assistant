@@ -5,9 +5,6 @@ import document from "document";
 
 let screen1 = document.getElementById("screen1");
 let screen2 = document.getElementById("screen2");
-let screen3 = document.getElementById("screen3");
-let list = document.getElementById("myList");
-let items = list.getElementsByClassName("list-item");
 let adidas1 = document.getElementById("adidas1");
 let adidas2 = document.getElementById("adidas2");
 let adidas3 = document.getElementById("adidas3");

@@ -35,7 +35,5 @@
         <text x="4%" y="90%" id="nike3">Large 42.5, 36.5, 42.5</text>
       </use>
 
-    </use>
-    <use id="myList" href="#tile-list" class="horizontal-pad">
   </svg>
 </svg>
