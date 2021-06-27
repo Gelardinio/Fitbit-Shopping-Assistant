@@ -5,6 +5,7 @@ import document from "document";
 
 let screen1 = document.getElementById("screen1");
 let screen2 = document.getElementById("screen2");
+let screen3 = document.getElementById("screen3");
 let adidas1 = document.getElementById("adidas1");
 let adidas2 = document.getElementById("adidas2");
 let adidas3 = document.getElementById("adidas3");
@@ -13,8 +14,10 @@ let adidas = document.getElementById("adidas" + incrementer);
 
 const button1 = document.getElementById("button-1");
 const button2 = document.getElementById("button-2");
+const button3 = document.getElementById("button-2");
 const button4 = document.getElementById("button-4");
 const button5 = document.getElementById("button-5");
+const button6 = document.getElementById("button-6");
 
 let shirtLength = 0;
 let chestLength = 0;
@@ -92,10 +95,22 @@ function showScreen1() {
   screen1.style.display = "inline"; 
 }
 
+function showScreen12() {
+  console.log("Show screen 1");
+  screen3.style.display = "none";
+  screen1.style.display = "inline"; 
+}
+
 function showScreen2() {
   console.log("Show screen 2");
   screen1.style.display = "none"; 
   screen2.style.display = "inline";
+}
+
+function showScreen3() {
+  console.log("Show screen 3");
+  screen1.style.display = "none"; 
+  screen3.style.display = "inline";
 }
 
 button1.addEventListener("click", (evt) => {
@@ -103,10 +118,21 @@ button1.addEventListener("click", (evt) => {
   showScreen2();
 })
 
+button3.addEventListener("click", (evt) => {
+  console.log("CLICKED");
+  showScreen3();
+})
+
 button5.addEventListener("click", (evt) => {
   console.log("CLICKED 2");
   showScreen1();
 })
+
+button6.addEventListener("click", (evt) => {
+  console.log("CLICKED 3");
+  showScreen12();
+})
+
 
 function addText(nUser, dict) {
   for (let i in dict) {
