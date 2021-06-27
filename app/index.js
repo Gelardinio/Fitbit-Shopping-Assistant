@@ -30,7 +30,7 @@ let User = class {
   }
 }
 
-let NewUser = new User("f", 20, 20, 20);
+let NewUser = new User("m", 40, 40, 40);
 
 console.log(NewUser[2]);
 
@@ -78,13 +78,13 @@ if (NewUser.gender == "m") {
   let AdidasShirt = new ShirtSize(35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42);
   let AdidasPant = new PantSize(31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5);
   let NikeShirt = new ShirtSize(36.25, 31.5, 36.25, 39.25, 33.5, 39.25, 42.5, 36.5, 42.5);
+  let dicts = {adidasS: [35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
 } else {
   let AdidasShirt = new ShirtSize(34, 27.6, 37.5, 36.5, 30, 40, 39, 33, 42.5);
   let AdidasPant = new PantSize(38.5, 38, 30.5, 31.75, 40.5, 31, 34.5, 43.5, 31.5);
 }
 
-turnGreen();
-addText();
+addText(NewUser, dicts);
 
 function showScreen1() {
   console.log("Show screen 1");
@@ -108,16 +108,32 @@ button5.addEventListener("click", (evt) => {
   showScreen1();
 })
 
-function turnGreen() {
-  let adidas = document.getElementById(AdidasShirt.bestFit(NewUser));
-  adidas.style.fill = "green";
-  console.log("turn green");
-  let added = "Value: ";
-  console.log(added + AdidasShirt.chest1);
+function addText(nUser, dict) {
+  for (let i in dict) {
+      console.log(dict[i][0] + "bruh");
+      let range1 = Math.abs(nUser.chestLength - dict[i][0]) + Math.abs(nUser.waistLength - dict[i][1]) + Math.abs(nUser.hipLength - dict[i][2]);
+      let range2 = Math.abs(nUser.chestLength - dict[i][3]) + Math.abs(nUser.waistLength - dict[i][4]) + Math.abs(nUser.hipLength - dict[i][5]);
+      let range3 = Math.abs(nUser.chestLength - dict[i][6]) + Math.abs(nUser.waistLength - dict[i][7]) + Math.abs(nUser.hipLength - dict[i][8]);
+      if (range1 < range2 && range1 < range3) {
+        let temp = document.getElementById(i + "1");
+        turnGreen(temp);
+      } else if (range2 < range1 && range2 < range3) {
+        let temp = document.getElementById(i + "2");
+        turnGreen(temp);
+      } else {
+        let temp = document.getElementById(i + "3");
+        turnGreen(temp);
+      }
+      let tempText = document.getElementById(i + "1");
+      tempText.text = "Small " + dict[i][0] + " " + dict[i][1] + " " + dict[i][2];
+      let tempText = document.getElementById(i + "2")
+      tempText.text = "Medium " + dict[i][3] + " " + dict[i][4] + " " + dict[i][5];
+      let tempText = document.getElementById(i + "3")
+      tempText.text = "Large " + dict[i][6] + " " + dict[i][7] + " " + dict[i][8];
+  }
 }
 
-function addText() {
-  adidas1.text = "Small " + AdidasShirt.chest1 + " " + AdidasShirt.waist1 + " " + AdidasShirt.hip1;
-  adidas2.text = "Medium " + AdidasShirt.chest2 + " " + AdidasShirt.waist2 + " " + AdidasShirt.hip2;
-  adidas3.text = "Large " + AdidasShirt.chest3 + " " + AdidasShirt.waist3 + " " + AdidasShirt.hip3;
+function turnGreen(toFill) {
+  toFill.style.fill = "green";
+  console.log("turn green");
 }
