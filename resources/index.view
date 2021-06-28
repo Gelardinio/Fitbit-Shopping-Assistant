@@ -5,6 +5,7 @@
     <use id="button-2" href="#icon-button" class="extra-large-button application-fill plus-button" />
     <use id="button-3" href="#icon-button" class="extra-large-button application-fill plus-button" />
     <use id="button-4" href="#icon-button" class="extra-large-button application-fill plus-button" />
+    <rect id="background" />
   </svg>
   <svg id="screen2" display="none">
 

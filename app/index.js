@@ -2,6 +2,7 @@
  * Entry point for the watch app
  */
 import document from "document";
+import * as messaging from "messaging";
 
 let screen1 = document.getElementById("screen1");
 let screen2 = document.getElementById("screen2");
@@ -20,6 +21,7 @@ const button4 = document.getElementById("button-4");
 const button5 = document.getElementById("button-5");
 const button6 = document.getElementById("button-6");
 const button7 = document.getElementById("button-7");
+let background = document.getElementById("background");
 
 let shirtLength = 0;
 let chestLength = 0;
@@ -214,3 +216,20 @@ function turnGreen(toFill) {
   toFill.style.fill = "green";
   console.log("turn green");
 }
+
+messaging.peerSocket.onmessage = evt => {
+  console.log(`App received: ${JSON.stringify(evt)}`);
+  if (evt.data.key === "color" && evt.data.newValue) {
+    let color = JSON.parse(evt.data.newValue);
+    console.log(`Setting background color: ${color}`);
+    background.style.fill = color;
+  }
+};
+
+messaging.peerSocket.onopen = () => {
+  console.log("App Socket Open");
+};
+
+messaging.peerSocket.onclose = () => {
+  console.log("App Socket Closed");
+};
