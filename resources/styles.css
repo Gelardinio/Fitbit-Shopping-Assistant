@@ -152,3 +152,17 @@
   fill: fb-green;
   font-size: 30;
 }
+
+#button-7 #text {
+  text-buffer: "BOI";
+}
+
+#button-7 {
+  y: 20;
+  x: 230;
+  fill: "black";
+}
+
+#button-7 #image {
+  href: "back.png"
+}
