@@ -48,7 +48,7 @@ let User = class {
   editHL(inputChange) {
     this.hipLength = inputChange;
   }
-  editIL(intputChange) {
+  editIL(inputChange) {
     this.inseamLength = inputChange;
   }
   sayGender() {
@@ -59,7 +59,7 @@ let User = class {
   }
 }
 
-let NewUser = new User("Male", 20, 20, 20, 20);
+let NewUser = new User("Male", 56, 45, 56, 56);
 
 let dictS = {adidasS: [35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
 let dictP = {adidasP: [31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5]}; 
@@ -83,25 +83,28 @@ messaging.peerSocket.onmessage = evt => {
     NewUser.editCL(chest);
     changeMeasurements(NewUser);
     addTextS(NewUser, dictS); 
-    console.log("BRUH" + NewUser.sayCL());
   }
   if (evt.data.key === "waist" && evt.data.newValue) {
     let waist = JSON.parse(evt.data.newValue);
     NewUser.editWL(waist);
     changeMeasurements(NewUser);
-    addTextS(NewUser, dictS); 
+    addTextS(NewUser, dictS);
+    addTextP(NewUser, dictP);
   }
   if (evt.data.key === "hip" && evt.data.newValue) {
     let hip = JSON.parse(evt.data.newValue);
-    NewUser.editWL(hip);
+    NewUser.editHL(hip);
     changeMeasurements(NewUser);
     addTextS(NewUser, dictS); 
+    addTextP(NewUser, dictP);
   }
   if (evt.data.key === "inseam" && evt.data.newValue) {
     let inseam = JSON.parse(evt.data.newValue);
-    NewUser.editWL(inseam);
+    console.log("inseam: " + inseam);
+    NewUser.editIL(inseam);
     changeMeasurements(NewUser);
-    addTextS(NewUser, dictS); 
+    addTextS(NewUser, dictS);
+    addTextP(NewUser, dictP); 
   }
 };
 
@@ -233,9 +236,16 @@ function addTextS(nUser, dict) {
 
 function addTextP(nUser, dict) {
   for (let i in dict) {
-      let range1 = Math.abs(nUser.wistLength - dict[i][0]) + Math.abs(nUser.hipLength - dict[i][1]) + Math.abs(nUser.inseamLength  - dict[i][2]);
-      let range2 = Math.abs(nUser.wistLength - dict[i][3]) + Math.abs(nUser.hipLength - dict[i][4]) + Math.abs(nUser.inseamLength - dict[i][5]);
-      let range3 = Math.abs(nUser.wistLength - dict[i][6]) + Math.abs(nUser.hipLength - dict[i][7]) + Math.abs(nUser.inseamLength - dict[i][8]);
+      let range1 = Math.abs(nUser.waistLength - dict[i][0]) + Math.abs(nUser.hipLength - dict[i][1]) + Math.abs(nUser.inseamLength  - dict[i][2]);
+      let range2 = Math.abs(nUser.waistLength - dict[i][3]) + Math.abs(nUser.hipLength - dict[i][4]) + Math.abs(nUser.inseamLength - dict[i][5]);
+      let range3 = Math.abs(nUser.waistLength - dict[i][6]) + Math.abs(nUser.hipLength - dict[i][7]) + Math.abs(nUser.inseamLength - dict[i][8]);
+      console.log("Range 1P: " + range1);
+      console.log("Range 2P: " + range2);
+      console.log("Range 3P: " + range3);
+      for (let k = 0; k < 3; k++) {
+        let temps = document.getElementById(i + (k + 1));
+        temps.style.fill = "black";
+      }
       if (range1 < range2 && range1 < range3) {
         let temp = document.getElementById(i + "1");
         turnGreen(temp);
