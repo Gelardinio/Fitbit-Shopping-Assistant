@@ -39,9 +39,11 @@ function mySettings(props) {
             max="60"
             onChange={value => props.settingsStorage.setItem('inseamM', value)}
           />
+          <Text>Main Background Colour</Text>
           <ColorSelect
             settingsKey="color"
             colors={[
+              {color: "#000000"},
               {color: "tomato"},
               {color: "sandybrown"},
               {color: "#FFD700"},

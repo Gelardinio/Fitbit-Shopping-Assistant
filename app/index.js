@@ -36,57 +36,43 @@ let User = class {
     this.hipLength = hipLength;
     this.inseamLength = inseamLength;
   }
-}
-
-let NewUser = new User("m", 40, 40, 40, 40);
-
-let ShirtSize = class {
-  constructor(chest1, waist1, hip1, chest2, waist2, hip2, chest3, waist3, hip3) {
-    this.chest1 = chest1;
-    this.waist1 = waist1;
-    this.hip1 = hip1; 
-    this.chest2 = chest2;
-    this.waist2 = waist2;
-    this.hip2 = hip2;
-    this.chest3 = chest3;
-    this.waist3 = waist3;
-    this.hip3 = hip3;    
+  editGender(inputChange) {
+    this.gender = inputChange;
   }
-  bestFit(nUser) {
-    let range1 = Math.abs(nUser.chestLength - this.chest1) + Math.abs(nUser.waistLength - this.waist1) + Math.abs(nUser.hipLength - this.hip1);
-    let range2 = Math.abs(nUser.chestLength - this.chest2) + Math.abs(nUser.waistLength - this.waist2) + Math.abs(nUser.hipLength - this.hip2);
-    let range3 = Math.abs(nUser.chestLength - this.chest3) + Math.abs(nUser.waistLength - this.waist3) + Math.abs(nUser.hipLength - this.hip3);
-    if (range1 < range2 && range1 < range3) {
-      return "adidas1";
-    } else if (range2 < range1 && range2 < range3) {
-      return "adidas2";
-    } else {
-      return "adidas3";
-    }
+  editCL(inputChange) {
+    this.chestLength = inputChange;
+  }
+  editWL(inputChange) {
+    this.waistLength = inputChange;
+  }
+  editHL(inputChange) {
+    this.hipLength = inputChange;
+  }
+  editIL(intputChange) {
+    this.inseamLength = inputChange;
+  }
+  sayGender() {
+    return this.gender;
   }
 }
 
-let PantSize = class {
-  constructor(waist1, hip1, inseam1, waist2, hip2, inseam2, waist3, hip3, inseam3) {
-      this.waist1 = waist1;
-      this.hip1 = hip1;
-      this.inseam1 = inseam1;
-      this.waist2 = waist2;
-      this.hip2 = hip2;
-      this.inseam2 = inseam2;
-      this.waist3 = waist3;
-      this.hip3 = hip3;
-      this.inseam3 = inseam3;      
+let NewUser = new User("Male", 40, 40, 40, 40);
+
+let dictS = {adidasS: [35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
+let dictP = {adidasP: [31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5]}; 
+
+function changeMeasurements(userName) {
+  if (userName.gender == "Male") {
+    dictS = {adidasS: [35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
+    dictP = {adidasP: [31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5]};
+  } else {
+    dictS = {adidasS: [34.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
+    //let AdidasShirt = new ShirtSize(34, 27.6, 37.5, 36.5, 30, 40, 39, 33, 42.5);
+    //let AdidasPant = new PantSize(38.5, 38, 30.5, 31.75, 40.5, 31, 34.5, 43.5, 31.5);
   }
 }
 
-if (NewUser.gender == "m") {
-  let dictS = {adidasS: [35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
-  let dictP = {adidasP: [31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5]};
-} else {
-  let AdidasShirt = new ShirtSize(34, 27.6, 37.5, 36.5, 30, 40, 39, 33, 42.5);
-  let AdidasPant = new PantSize(38.5, 38, 30.5, 31.75, 40.5, 31, 34.5, 43.5, 31.5);
-}
+changeMeasurements(NewUser);
 
 addTextS(NewUser, dictS);
 addTextP(NewUser, dictP);
@@ -223,6 +209,15 @@ messaging.peerSocket.onmessage = evt => {
     let color = JSON.parse(evt.data.newValue);
     console.log(`Setting background color: ${color}`);
     background.style.fill = color;
+  }
+  if (evt.data.key === "gender" && evt.data.newValue) {
+    let gender = JSON.parse(evt.data.newValue).values[0].name;
+    console.log(`Changing gender to: ${gender}`);
+    NewUser.editGender(gender);
+    console.log(NewUser.sayGender());
+    changeMeasurements(NewUser);
+    addTextS(NewUser, dictS);
+    addTextP(NewUser, dictP);
   }
 };
 
