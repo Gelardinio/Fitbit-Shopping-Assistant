@@ -155,72 +155,51 @@
   <svg id="screen4" display="none">
 
       <use href="#scrollview">
-      <use href="#scrollview-item" height="250">
+      <use href="#scrollview-item" height="200">
+        <rect width="100%" height="100%" fill="fb-pink"/>
+        <text x="30%" y="29%" font-family="System-Bold">Women</text>
+        <text x="15%" y="50%" text-length="25">Small (N/A)</text>
+        <text x="15%" y="70%" text-length="25">Medium 5-9.5</text>
+        <text x="15%" y="90%" text-length="25">Large 10-13</text>
+      </use>
+
+      <use href="#scrollview-item" height="200">
         <rect width="100%" height="100%" fill="fb-cyan"/>
-        <text x="13%" y="29%" font-family="System-Bold">Adidas</text>
-        <svg viewport-fill="green">
-          <section x="45%" y="13%" width="100" height="100">
-            <image width="50" height="50" href="adidas.png" />
-          </section>
-        </svg>
-        <text x="4%" y="50%" text-length="25" id="adidasP1"></text>
-        <text x="4%" y="70%" text-length="25" id="adidasP2"></text>
-        <text x="4%" y="90%" text-length="25" id="adidasP3"></text>
-      </use>
-
-      <use href="#scrollview-item" height="250">
-        <rect width="100%" height="100%" fill="fb-red"/>
-        <text x="27%" y="25%" font-family="System-Bold">Nike</text>
-        <svg viewport-fill="green">
-          <section x="57%" y="11%" width="100" height="100">
-            <image width="50" height="50" href="nike.png" />
-          </section>
-        </svg>
-        <text x="4%" y="46%" text-length="25" id="nikeP1"></text>
-        <text x="4%" y="66%" text-length="25" id="nikeP2"></text>
-        <text x="4%" y="86%" text-length="25" id="nikeP3"></text>
-      </use>
-    
-      <use href="#scrollview-item" height="250">
-        <rect width="100%" height="100%" fill="fb-orange"/>
-        <text x="25%" y="25%" font-family="System-Bold">Puma</text>
-        <svg viewport-fill="green">
-          <section x="57%" y="11%" width="100" height="100">
-            <image width="50" height="50" href="puma.png" />
-          </section>
-        </svg>
-        <text x="4%" y="46%" text-length="25" id="pumaP1"></text>
-        <text x="4%" y="66%" text-length="25" id="pumaP2"></text>
-        <text x="4%" y="86%" text-length="25" id="pumaP3"></text>
-      </use>
-
-      <use href="#scrollview-item" height="250">
-        <rect width="100%" height="100%" fill="fb-blue"/>
-        <text x="10%" y="25%" font-family="System-Bold">Under Armour</text>
-        <svg viewport-fill="green">
-          <section x="70%" y="11%" width="100" height="100">
-            <image width="50" height="50" href="ua.png" />
-          </section>
-        </svg>
-        <text x="4%" y="46%" text-length="25" id="uaP1"></text>
-        <text x="4%" y="66%" text-length="25" id="uaP2"></text>
-        <text x="4%" y="86%" text-length="25" id="uaP3"></text>
-      </use>
-
-      <use href="#scrollview-item" height="250">
-        <rect width="100%" height="100%" fill="fb-red"/>
-        <text x="20%" y="25%" font-family="System-Bold">Columbia</text>
-        <svg viewport-fill="green">
-          <section x="60%" y="11%" width="100" height="100">
-            <image width="50" height="50" href="columbia.png" />
-          </section>
-        </svg>
-        <text x="4%" y="46%" text-length="25" id="columbiaP1"></text>
-        <text x="4%" y="66%" text-length="25" id="columbiaP2"></text>
-        <text x="4%" y="86%" text-length="25" id="columbiaP3"></text>
+        <text x="40%" y="29%" font-family="System-Bold">Men</text>
+        <text x="15%" y="50%" text-length="25">Small (N/A)</text>
+        <text x="15%" y="70%" text-length="25">Medium 5-8.5</text>
+        <text x="15%" y="90%" text-length="25">Large 9-13</text>
       </use>
 
       <use id="button-7" href="#icon-button" class="medium-button application-fill plus-button" />
+
+  </svg>
+
+  <svg id="screen5" display="none">
+
+      <use href="#scrollview">
+      <use href="#scrollview-item" height="2500">
+        <text x="6%" y="60" class="p2 foreground-fill" fill="white" font-size="27">General Use Guide</text>
+        <text x="40%" y="105" class="p2 foreground-fill" fill="white" display-align="center">Setup</text>
+        <use href="#dynamic-textarea" class="p2 foreground-fill" y="120" x="25" font-size="25" width="100%-50">
+          <set href="#text" attributeName="text-buffer" to="To start using the app, go into the Fitbit app on your phone and you should see a settings page associated with the shopping assistant app. From there, use the sliders to input your body dimensions and the menu to select your gender. You can also select a colour for the main menu background."/>
+        </use>
+        <text x="40%" y="560" class="p2 foreground-fill" fill="white" display-align="center">Shirts</text>
+        <use href="#dynamic-textarea" class="p2 foreground-fill" y="575" x="25" font-size="25" width="100%-50">
+          <set href="#text" attributeName="text-buffer" to="The measurements you will see areunder the shirts section is in the order chest, waist, and hips. All values are in inches and the size highlighted green is the one recommended according to the body measurements you have inputed."/>
+        </use>
+        <text x="40%" y="950" class="p2 foreground-fill" fill="white" display-align="center">Pants</text>
+        <use href="#dynamic-textarea" class="p2 foreground-fill" y="965" x="25" font-size="25" width="100%-50">
+          <set href="#text" attributeName="text-buffer" to="The pant measurements you will see under the pants section is in the order waist, hips, inseam. All values are in inches and the size highlighted green is the one recommended according to the body measurements you have inputed."/>
+        </use>
+        <text x="40%" y="1340" class="p2 foreground-fill" fill="white" display-align="center">Pants</text>
+        <use href="#dynamic-textarea" class="p2 foreground-fill" y="1355" x="25" font-size="25" width="100%-50">
+          <set href="#text" attributeName="text-buffer" to="The sock section is a general guide without specific brands. Sock sizes are matched based on shoe sizes for both genders."/>
+        </use>
+        <rect width="100%" height="30" fill="black" y="$+6" />
+      </use>
+
+      <use id="button-8" href="#icon-button" class="medium-button application-fill plus-button" />
 
   </svg>
 </svg>

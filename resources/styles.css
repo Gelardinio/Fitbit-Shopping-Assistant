@@ -172,3 +172,17 @@
   height: 100%;
   fill: white;
 }
+
+#button-8 #text {
+  text-buffer: "BOI";
+}
+
+#button-8 {
+  y: 20;
+  x: 230;
+  fill: "black";
+}
+
+#button-8 #image {
+  href: "back.png"
+}
