@@ -54,12 +54,64 @@ let User = class {
   sayGender() {
     return this.gender;
   }
+  sayCL() {
+    return this.chestLength;
+  }
 }
 
-let NewUser = new User("Male", 40, 40, 40, 40);
+let NewUser = new User("Male", 20, 20, 20, 20);
 
 let dictS = {adidasS: [35.5, 31, 36, 38.5, 33.5, 38.5, 42, 37.5, 42], nikeS: [36.25, 36.25, 31.5, 39.25, 39.25, 33.5, 42.5, 42.5, 36.5,], pumaS: [36, 32.5, 37.5, 39.5, 35, 40.5, 42.6, 37.8, 43.5], uaS: [35, 29, 34.5, 39, 32, 37.5, 43, 36, 41], columbiaS: [35, 38.5, 37.5, 37, 30.5, 39.5, 40, 33, 42]};
 let dictP = {adidasP: [31, 36, 32.1, 33.5, 38.5, 32.3, 37, 42, 32.5]}; 
+
+messaging.peerSocket.onmessage = evt => {
+  console.log(`App received: ${JSON.stringify(evt)}`);
+  if (evt.data.key === "color" && evt.data.newValue) {
+    let color = JSON.parse(evt.data.newValue);
+    console.log(`Setting background color: ${color}`);
+    background.style.fill = color;
+  }
+  if (evt.data.key === "gender" && evt.data.newValue) {
+    let gender = JSON.parse(evt.data.newValue).values[0].name;
+    NewUser.editGender(gender);
+    changeMeasurements(NewUser);
+    addTextS(NewUser, dictS);
+    addTextP(NewUser, dictP);
+  }
+  if (evt.data.key === "chest" && evt.data.newValue) {
+    let chest = JSON.parse(evt.data.newValue);
+    NewUser.editCL(chest);
+    changeMeasurements(NewUser);
+    addTextS(NewUser, dictS); 
+    console.log("BRUH" + NewUser.sayCL());
+  }
+  if (evt.data.key === "waist" && evt.data.newValue) {
+    let waist = JSON.parse(evt.data.newValue);
+    NewUser.editWL(waist);
+    changeMeasurements(NewUser);
+    addTextS(NewUser, dictS); 
+  }
+  if (evt.data.key === "hip" && evt.data.newValue) {
+    let hip = JSON.parse(evt.data.newValue);
+    NewUser.editWL(hip);
+    changeMeasurements(NewUser);
+    addTextS(NewUser, dictS); 
+  }
+  if (evt.data.key === "inseam" && evt.data.newValue) {
+    let inseam = JSON.parse(evt.data.newValue);
+    NewUser.editWL(inseam);
+    changeMeasurements(NewUser);
+    addTextS(NewUser, dictS); 
+  }
+};
+
+messaging.peerSocket.onopen = () => {
+  console.log("App Socket Open");
+};
+
+messaging.peerSocket.onclose = () => {
+  console.log("App Socket Closed");
+};
 
 function changeMeasurements(userName) {
   if (userName.gender == "Male") {
@@ -72,10 +124,10 @@ function changeMeasurements(userName) {
   }
 }
 
-changeMeasurements(NewUser);
+//changeMeasurements(NewUser);
 
-addTextS(NewUser, dictS);
-addTextP(NewUser, dictP);
+//addTextS(NewUser, dictS);
+//addTextP(NewUser, dictP);
 
 function showScreen1() {
   console.log("Show screen 1");
@@ -150,10 +202,16 @@ button7.addEventListener("click", (evt) => {
 
 function addTextS(nUser, dict) {
   for (let i in dict) {
-      console.log(dict[i][0] + "bruh");
       let range1 = Math.abs(nUser.chestLength - dict[i][0]) + Math.abs(nUser.waistLength - dict[i][1]) + Math.abs(nUser.hipLength - dict[i][2]);
       let range2 = Math.abs(nUser.chestLength - dict[i][3]) + Math.abs(nUser.waistLength - dict[i][4]) + Math.abs(nUser.hipLength - dict[i][5]);
       let range3 = Math.abs(nUser.chestLength - dict[i][6]) + Math.abs(nUser.waistLength - dict[i][7]) + Math.abs(nUser.hipLength - dict[i][8]);
+      console.log("Range 1: " + range1);
+      console.log("Range 2: " + range2);
+      console.log("Range 3: " + range3);
+      for (let k = 0; k < 3; k++) {
+        let temps = document.getElementById(i + (k + 1));
+        temps.style.fill = "black";
+      }
       if (range1 < range2 && range1 < range3) {
         let temp = document.getElementById(i + "1");
         turnGreen(temp);
@@ -175,7 +233,6 @@ function addTextS(nUser, dict) {
 
 function addTextP(nUser, dict) {
   for (let i in dict) {
-      console.log(dict[i][0] + "bruh");
       let range1 = Math.abs(nUser.wistLength - dict[i][0]) + Math.abs(nUser.hipLength - dict[i][1]) + Math.abs(nUser.inseamLength  - dict[i][2]);
       let range2 = Math.abs(nUser.wistLength - dict[i][3]) + Math.abs(nUser.hipLength - dict[i][4]) + Math.abs(nUser.inseamLength - dict[i][5]);
       let range3 = Math.abs(nUser.wistLength - dict[i][6]) + Math.abs(nUser.hipLength - dict[i][7]) + Math.abs(nUser.inseamLength - dict[i][8]);
@@ -203,28 +260,3 @@ function turnGreen(toFill) {
   console.log("turn green");
 }
 
-messaging.peerSocket.onmessage = evt => {
-  console.log(`App received: ${JSON.stringify(evt)}`);
-  if (evt.data.key === "color" && evt.data.newValue) {
-    let color = JSON.parse(evt.data.newValue);
-    console.log(`Setting background color: ${color}`);
-    background.style.fill = color;
-  }
-  if (evt.data.key === "gender" && evt.data.newValue) {
-    let gender = JSON.parse(evt.data.newValue).values[0].name;
-    console.log(`Changing gender to: ${gender}`);
-    NewUser.editGender(gender);
-    console.log(NewUser.sayGender());
-    changeMeasurements(NewUser);
-    addTextS(NewUser, dictS);
-    addTextP(NewUser, dictP);
-  }
-};
-
-messaging.peerSocket.onopen = () => {
-  console.log("App Socket Open");
-};
-
-messaging.peerSocket.onclose = () => {
-  console.log("App Socket Closed");
-};
