@@ -3,6 +3,8 @@
 
 The fitbit shopping assistant is an app built on the Fitbit SDK. It uses the user's body dimensions (waist, hips, chest, inseam etc) inputed in the companion app to calculate the best fit of clothing for each brand and gender for shirts pants and socks. By doing so, one does not have to waste time trying on different sizes of clothing when visiting the mall as the best fit is already given to them. Currently, there are not too many brands that I have added to the app; if there is a demand for it, I will add some more. 
 
+You can find the app here: https://gallery.fitbit.com/en-ca/details/fbb7a8ca-633e-4629-b31a-2f22687dd64b.
+
 ## Screenshots
 
 ![/images/image1.PNG](images/image1.PNG)
