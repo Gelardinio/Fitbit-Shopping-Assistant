@@ -5,7 +5,11 @@ The fitbit shopping assistant is an app built on the Fitbit SDK. It uses the use
 
 ## Screenshots
 
-
+![/images/image1.png](images/image1.png)
+![/images/image2.png](images/image2.png)
+![/images/image3.png](images/image3.png)
+![/images/image4.png](images/image4.png)
+![/images/image5.png](images/image5.png)
 
 ## Installation on Fitbit
 
