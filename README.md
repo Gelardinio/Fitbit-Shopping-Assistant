@@ -13,7 +13,7 @@ This app is compatible on the Fitbit Versa 3 and Fitbit Sense as they both run o
 
 ## Installiation Through Source Code
 
-To build or test this app on a computer, you need the Fitbit OS Simulator. Using shell or git, type "npm install". Then use cd and go to the directory where you have downloaded the source code. Then type "npx fitbit" (you have to have logged onto Fitbit on your web browser). Type "build" and then type "install" 
+To build or test this app on a computer, you need the Fitbit OS Simulator. Using shell or git, type ```npm install```. Then use cd and go to the directory where you have downloaded the source code. Then type ```npx fitbit``` (you have to have logged onto Fitbit on your web browser). Type ```build``` and then type ```install``` 
 
 ## Usage
 
